@@ -1,0 +1,21 @@
+bootConfigURL: https://github.com/jenkins-x/jenkins-x-boot-helmfile-config
+cluster:
+  gitKind: github
+  gitName: github
+  gitServer: https://github.com
+  namespace: jx
+environments:
+- key: dev
+- key: staging
+  remoteCluster: false
+- key: production
+  remoteCluster: false
+gitops: true
+helmfile: true
+kaniko: true
+repository: nexus
+secretStorage: local
+versionStream:
+  ref: v1.0.330
+  url: https://github.com/jenkins-x/jenkins-x-versions.git
+webhook: lighthouse
