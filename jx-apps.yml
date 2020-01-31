@@ -1,0 +1,9 @@
+apps:
+- name: stable/nginx-ingress
+- name: jenkins-x/jxboot-helmfile-resources
+- name: jenkins-x/nexus
+- name: jenkins-x/lighthouse
+- name: jenkins-x/tekton
+- name: jenkins-x/chartmuseum
+- name: repositories
+  repository: ".."
