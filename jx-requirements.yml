@@ -16,5 +16,6 @@ kaniko: true
 repository: nexus
 secretStorage: local
 versionStream:
+  ref: master
   url: https://github.com/jenkins-x-versions/jenkins-x-versions.git
 webhook: lighthouse
