@@ -1,0 +1,37 @@
+
+Showing logs for build [32mjstrachan-environment-multiclus-4f72t-1[0m stage [32mpr-checks[0m and container [32mstep-credential-initializer-sbdtk[0m
+{"level":"warn","ts":1583312930.8674352,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1583312930.8678179,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mjstrachan-environment-multiclus-4f72t-1[0m stage [32mpr-checks[0m and container [32mstep-working-dir-initializer-874tv[0m
+{"level":"warn","ts":1583312932.2661724,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1583312932.267787,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mjstrachan-environment-multiclus-4f72t-1[0m stage [32mpr-checks[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mjstrachan-environment-multiclus-4f72t-1[0m stage [32mpr-checks[0m and container [32mstep-git-source-jstrachan-environment-multiclus-4f72t-bjbr5[0m
+{"level":"warn","ts":1583312938.3731344,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1583312939.5617342,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*********/environment-multicluster-dev-dev.git @ master in path /workspace/source"}
+
+Showing logs for build [32mjstrachan-environment-multiclus-4f72t-1[0m stage [32mpr-checks[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:9aae3c5ce7d70944fb466228d8681999a833aadc,1:a0288138a0e877cd537fb5f67d0550b3855b7a64
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git fetch origin --unshallow a0288138a0e877cd537fb5f67d0550b3855b7a64: 9aae3c5ce7d70944fb466228d8681999a833aadc:
+DEBUG: ran git fetch --unshallow origin a0288138a0e877cd537fb5f67d0550b3855b7a64: 9aae3c5ce7d70944fb466228d8681999a833aadc: in 
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard 9aae3c5ce7d70944fb466228d8681999a833aadc
+DEBUG: ran git reset --hard 9aae3c5ce7d70944fb466228d8681999a833aadc in 
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge a0288138a0e877cd537fb5f67d0550b3855b7a64
+DEBUG: ran git merge a0288138a0e877cd537fb5f67d0550b3855b7a64 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e 9aae3c5ce7d70944fb466228d8681999a833aadc..HEAD
+Merged SHA a0288138a0e877cd537fb5f67d0550b3855b7a64 with commit message 'chore(deps): bump https://github.com/*********/bdd-gh-1583312861.git' into base branch master
+
+Showing logs for build [32mjstrachan-environment-multiclus-4f72t-1[0m stage [32mpr-checks[0m and container [32mstep-create-helmfile[0m
+
+Showing logs for build [32mjstrachan-environment-multiclus-4f72t-1[0m stage [32mpr-checks[0m and container [32mstep-lint-helmfile-system[0m
+in ./helmfile.yaml: error during ../environments.yaml.part.0 parsing: template: stringTemplate:6:9: executing "stringTemplate" at <requiredEnv "JX_SECRETS_YAML">: error calling requiredEnv: required env var `JX_SECRETS_YAML` is not set
+[31m
+Pipeline failed on stage 'pr-checks' : container 'step-lint-helmfile-system'. The execution of the pipeline has stopped.[0m
