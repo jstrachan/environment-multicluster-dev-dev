@@ -1,0 +1,7 @@
+dependencies:
+- host: github.com
+  owner: jstrachan
+  repo: bdd-gh-1583312861
+  url: https://github.com/jstrachan/bdd-gh-1583312861.git
+  version: ""
+  versionURL: ""
